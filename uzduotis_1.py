@@ -84,18 +84,19 @@ def tieses(r_x, r_y, m_x, m_y, wwb):
     ## Braižomas grafikas su tiesėmis ir vektoriais
     plt.scatter(m_x, m_y, color="blue", label="Mėlyni(0)")
     plt.scatter(r_x, r_y, color="red", label="Raudoni(1)")
-    plt.plot(x, y1, color="pink", linewidth=2)
-    plt.plot(x, y2, color="orange", linewidth=2)
-    plt.plot(x, y3, color="green", linewidth=2)
-    plt.quiver(x0, y01, w1, w2, angles='xy', scale_units='xy', scale=1, color='pink')
-    plt.quiver(x0, y02, w12, w22, angles='xy', scale_units='xy', scale=1, color='orange')
-    plt.quiver(x0, y03, w13, w23, angles='xy', scale_units='xy', scale=1, color='green')
-    plt.legend(loc="lower left")
-    plt.axis("equal") ##gpt
+    plt.plot(x, y1, color="pink", linewidth=2, label="1-o rinkinio skiriamasis paviršius")
+    plt.plot(x, y2, color="orange", linewidth=2, label="2-o rinkinio skiriamasis paviršius")
+    plt.plot(x, y3, color="green", linewidth=2, label="3-o rinkinio skiriamasis paviršius")
+    plt.quiver(x0, y01, w1, w2, angles='xy', scale_units='xy', scale=1, color='pink', label="1-o rinkinio svorių vektorius")
+    plt.quiver(x0, y02, w12, w22, angles='xy', scale_units='xy', scale=1, color='orange', label="2-o rinkinio svorių vektorius")
+    plt.quiver(x0, y03, w13, w23, angles='xy', scale_units='xy', scale=1, color='green', label="3-o rinkinio svorių vektorius")
+    plt.legend(fontsize='small', loc="lower left")
+    plt.axis("equal")
     plt.xlabel("X")
     plt.ylabel("Y")
     plt.title("Duomenys, svorių vektoriai ir tiesės, atskiriančios klases")
     plt.grid(True)
+    plt.tight_layout()
     plt.show()
 
 

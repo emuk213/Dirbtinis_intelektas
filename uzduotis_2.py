@@ -91,7 +91,8 @@ def paketinis(X, y, epochs, speed, X_val, y_val):
         # Svorių atnaujinimas:
         for k in range(X.shape[1]):
             w[k] = w[k] - speed * (gradientSum[k] / len(X))  # Gradiento vidurkis
-
+          
+        # Kaupiami tikslumai ir paklaidos:
         tikslumas_po_epochos_l.append(tikslumas(X, y, w))
         tikslumas_po_epochos_v.append(tikslumas(X_val, y_val, w))
         paklaidos_po_epochos_l.append(galutine_paklaida(X, y, w))
@@ -129,7 +130,8 @@ def stochastinis(X, y, epochs, speed, X_val, y_val):
                 w[k] = w[k] - speed * (y_i - t_i) * y_i * (1 - y_i) * X[i, k]
             error = (t_i - y_i) ** 2
             totalError += error
-
+          
+        # Kaupiami tikslumai ir paklaidos:
         paklaidos_po_epochos_l.append(galutine_paklaida(X, y, w))
         tikslumas_po_epochos_l.append(tikslumas(X, y, w))
         tikslumas_po_epochos_v.append(tikslumas(X_val, y_val, w))

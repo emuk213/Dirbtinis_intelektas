@@ -117,7 +117,7 @@ def stochastinis(X, y, epochs, speed, X_val, y_val):
     tikslumas_po_epochos_v = []
     epoch = 0
     Emin = 0.01
-    # Generuojami atsitiktiniai svoriai:
+    # Generuojami atsitiktiniai svoriai (w_0 = b):
     np.random.seed(46)
     w = np.random.uniform(-1, 1, X.shape[1]).tolist()
 
